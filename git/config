@@ -1,0 +1,5 @@
+[user]
+	email = borangoher@proton.me
+	name = boran
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
