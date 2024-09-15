@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
     " buffer delete
     Plug 'moll/vim-bbye'
 
