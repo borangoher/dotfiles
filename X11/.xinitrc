@@ -1,10 +1,10 @@
+# get colors and terminal
+xrdb -merge $HOME/.config/X11/.Xresources
 urxvtd -o -q -f
-xrdb -merge ~/.config/X11/.Xresources
+udiskie &
 
-# keymaps
-setxkbmap -option 'caps:ctrl_modifier' xcape -e 'Caps_Lock=Escape'&
-
-# monitor
-$DOTFILES/X11/monitor.sh&
+# caps to ctrl/esc
+setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape'&
 
 exec i3
+

@@ -1,3 +1,4 @@
+# colors
 *.foreground: #C6C6C6
 *.background: #1C1C1C 
 *.cursorColor: #444444
@@ -27,6 +28,7 @@
 *.color7: #e4e4e4
 *.color15: #ffffff
 
+# urxvt settings
 URxvt*font: xft:IosevkaTerm Nerd Font Mono:size=14:pixelsize=16:antialias=true
 URxvt*borderLess: false
 URxvt*externalBorder: 0

@@ -1,10 +1,14 @@
 #!/bin/zsh
 
 compress () {
+    # compress a directory
+    
     tar cvzf $1.tar.gz $1
 }
 
 ftmuxp() {
+    # fuzzy find a tmuxp config
+
     if [[ -n $TMUX ]]; then
         return
     fi
@@ -30,6 +34,17 @@ ftmuxp() {
 }
 
 scratchpad() {
+    # open floating scratchpad
+
     "$DOTFILES/zsh/scratchpad.sh"
 }
 
+vman() {
+    # open man page in vim
+
+    nvim -c "SuperMan $*"
+
+    if [ "$?" != "0" ]; then
+        echo "No manual entry for $*"
+    fi
+}
