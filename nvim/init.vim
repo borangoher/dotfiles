@@ -61,6 +61,9 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 
     " comments
     Plug 'tpope/vim-commentary'
+
+    " md viewer
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 call plug#end()
 
 " use xsel
