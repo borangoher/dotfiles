@@ -118,7 +118,11 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-css', 
             \ 'coc-html',
-            \ 'coc-json', 
+            \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-markdownlint',
+            \ 'coc-vetur',
+            \ 'coc-clangd',
             \]
 
 
