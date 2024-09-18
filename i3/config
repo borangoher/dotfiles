@@ -11,12 +11,11 @@ font pango:IosevkaTerm NFM 12
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
+exec --no-startup-id gunst
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/wallpaper.png
 exec --no-startup-id urxvt
 exec --no-startup-id firefox
 exec --no-startup-id 1password
-exec --no-startup-id spotify
 exec --no-startup-id anki
 exec --no-startup-id protonvpn-app
 exec --no-startup-id ProtonUp-Qt
@@ -86,11 +85,11 @@ bindsym $mod+a focus parent
 set $term "1: terminals"
 set $web "2: web"
 set $pass "3: password manager"
-set $music "4: music"
+set $vpn "4: vpn"
 set $study "5: study"
-set $vpn "6: vpn"
-set $game "7: gaming"
-set $poe "8: poe"
+set $game "6: gaming"
+set $poe "7: poe"
+set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -98,11 +97,11 @@ set $ws10 "10"
 bindsym $mod+1 workspace number $term 
 bindsym $mod+2 workspace number $web
 bindsym $mod+3 workspace number $pass
-bindsym $mod+4 workspace number $music
+bindsym $mod+4 workspace number $vpn
 bindsym $mod+5 workspace number $study
-bindsym $mod+6 workspace number $vpn
-bindsym $mod+7 workspace number $game
-bindsym $mod+8 workspace number $poe
+bindsym $mod+6 workspace number $game
+bindsym $mod+7 workspace number $poe
+bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
@@ -110,11 +109,11 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Shift+1 move container to workspace number $term
 bindsym $mod+Shift+2 move container to workspace number $web
 bindsym $mod+Shift+3 move container to workspace number $pass
-bindsym $mod+Shift+4 move container to workspace number $music
+bindsym $mod+Shift+4 move container to workspace number $vpn
 bindsym $mod+Shift+5 move container to workspace number $study
-bindsym $mod+Shift+6 move container to workspace number $vpn
-bindsym $mod+Shift+7 move container to workspace number $game
-bindsym $mod+Shift+8 move container to workspace number $poe
+bindsym $mod+Shift+6 move container to workspace number $game
+bindsym $mod+Shift+7 move container to workspace number $poe
+bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
@@ -122,8 +121,6 @@ assign [class="urxvt"] $term
 assign [class="firefox" instance="Navigator"] $web
 assign [class="1password"] $pass
 assign [class="1Password"] $pass
-assign [class="spotify"] $music
-assign [class="Spotify"] $music
 assign [class="Zathura"] $study
 assign [class="anki"] $study
 assign [class="Anki"] $study
