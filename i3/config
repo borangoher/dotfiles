@@ -10,18 +10,15 @@ font pango:IosevkaTerm NFM 12
 # start up
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id dbus-update-activation-environment --all
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet
 exec --no-startup-id gunst
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/wallpaper.png
 exec --no-startup-id urxvt
 exec --no-startup-id firefox
 exec --no-startup-id 1password
-exec --no-startup-id anki
 exec --no-startup-id protonvpn-app
-exec --no-startup-id ProtonUp-Qt
-exec --no-startup-id steam
-exec --no-startup-id PathOfBuildingCommunity
-exec --no-startup-id awakened-poe-trade
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
