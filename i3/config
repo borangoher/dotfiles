@@ -13,7 +13,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id dbus-update-activation-environment --all
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet
-exec --no-startup-id gunst
+exec --no-startup-id dunst
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/wallpaper.png
 exec --no-startup-id urxvt
 exec --no-startup-id firefox
