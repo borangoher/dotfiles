@@ -48,3 +48,17 @@ vman() {
         echo "No manual entry for $*"
     fi
 }
+
+recon() {
+  # reset internet connection
+  
+  nmcli networking off
+  sleep 2
+  nmcli networking on
+}
+
+fkill() {
+  # kill firefox instance
+
+  pgrep firefox | xargs kill
+}

@@ -19,6 +19,8 @@ exec --no-startup-id urxvt
 exec --no-startup-id firefox
 exec --no-startup-id 1password
 exec --no-startup-id protonvpn-app
+exec --no-startup-id protonmail-bridge
+exec --no-startup-id thunderbird 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -85,11 +87,11 @@ bindsym $mod+a focus parent
 # workspaces
 set $term "1: terminals"
 set $web "2: web"
-set $pass "3: password manager"
-set $vpn "4: vpn"
+set $mail "3: mail"
+set $pass "4: password manager"
 set $study "5: study"
-set $game "6: gaming"
-set $poe "7: poe"
+set $vpn "6: vpn"
+set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -97,11 +99,11 @@ set $ws10 "10"
 # switch to workspace
 bindsym $mod+1 workspace number $term 
 bindsym $mod+2 workspace number $web
-bindsym $mod+3 workspace number $pass
-bindsym $mod+4 workspace number $vpn
+bindsym $mod+3 workspace number $mail
+bindsym $mod+4 workspace number $pass
 bindsym $mod+5 workspace number $study
-bindsym $mod+6 workspace number $game
-bindsym $mod+7 workspace number $poe
+bindsym $mod+6 workspace number $vpn
+bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
@@ -109,17 +111,21 @@ bindsym $mod+0 workspace number $ws10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $term
 bindsym $mod+Shift+2 move container to workspace number $web
-bindsym $mod+Shift+3 move container to workspace number $pass
-bindsym $mod+Shift+4 move container to workspace number $vpn
+bindsym $mod+Shift+3 move container to workspace number $mail
+bindsym $mod+Shift+4 move container to workspace number $pass
 bindsym $mod+Shift+5 move container to workspace number $study
-bindsym $mod+Shift+6 move container to workspace number $game
-bindsym $mod+Shift+7 move container to workspace number $poe
+bindsym $mod+Shift+6 move container to workspace number $vpn
+bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="urxvt"] $term
 assign [class="firefox" instance="Navigator"] $web
+assign [class="Mail"] $mail
+assign [class="thunderbird"] $mail
+assign [class="protonmail-bridge"] $mail
+assign [class="Proton Mail Bridge"] $mail
 assign [class="1password"] $pass
 assign [class="1Password"] $pass
 assign [class="Zathura"] $study
@@ -127,9 +133,6 @@ assign [class="anki"] $study
 assign [class="Anki"] $study
 assign [class="protonvpn-app"] $vpn
 assign [class="Protonvpn-app"] $vpn
-assign [class="ProtonUp-Qt"] $game
-assign [class="steam"] $game
-assign [class="pobfrontend"] $poe
 
 workspace_auto_back_and_forth yes
 
