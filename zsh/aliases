@@ -1,7 +1,0 @@
-# custom aliases
-alias ll='ls -lah'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gcb='git checkout -b'
-

@@ -1,5 +1,7 @@
 [user]
 	email = borangoher@proton.me
 	name = boran
-[core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+[commit]
+  template = /home/boran/.config/git/.git-commit-template
+[pull]
+  rebase = true

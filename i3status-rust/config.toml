@@ -1,0 +1,31 @@
+[theme]
+theme = "solarized-dark"
+
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "battery"
+device = "/sys/class/power_supply/macsmc-battery"
+missing_format = ""
+
+[[block]]
+block = "bluetooth"
+mac = "10:7C:61:27:9F:A8"
+disconnected_format = ""
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "speedtest"
+format = " ^icon_net_down $speed_down ^icon_net_up $speed_up "
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+timezone = "Europe/Istanbul"
+format = " $icon $timestamp.datetime(f:'%F %T', l:en_US) "

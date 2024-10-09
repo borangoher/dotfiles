@@ -64,6 +64,9 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 
     " md viewer
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+
+    " kitty
+    Plug 'fladson/vim-kitty'
 call plug#end()
 
 " use xsel
@@ -80,7 +83,6 @@ set noswapfile
 
 " save undo trees in files
 set undofile
-set undodir=$HOME/.config/nvim/undo
 
 " number of undo saved
 set undolevels=10000
@@ -123,9 +125,9 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-json',
             \ 'coc-tsserver',
-            \ 'coc-markdownlint',
             \ 'coc-vetur',
             \ 'coc-clangd',
+            \ 'coc-pyright',
             \]
 
 
@@ -145,17 +147,17 @@ set shortmess+=c
 " always show the signcolumn
 set signcolumn=number
 
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
