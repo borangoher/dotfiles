@@ -1,6 +1,17 @@
 [theme]
 theme = "solarized-dark"
 
+[theme.overrides]
+idle_bg = "#fbf1f2"
+idle_fg = "#8b8198"
+info_bg = "#06969A"
+info_fg = "#fbf1f2"
+good_bg = "#A3B367"
+good_fg = "#fbf1f2"
+warning_bg = "#DCB16C"
+warning_fg = "#fbf1f2"
+critical_bg = "#DA627D"
+critical_fg = "#fbf1f2"
 
 [icons]
 icons = "awesome6"

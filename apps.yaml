@@ -16,6 +16,7 @@ tools:
   pcmanfm
   imagemagick
   hledger-bin
+  grim
 
 shell:
   nushell
@@ -37,6 +38,7 @@ term:
 wm:
   sway
   swayimg
+  swaybg
   i3status-rust
 
 compatibility:
@@ -101,6 +103,10 @@ vpn:
 cpp:
   clang
 
+php:
+  php
+  composer
+
 mail:
   protonmail-bridge
 
@@ -113,4 +119,3 @@ cli:
   ani-cli
   zoxide
   speedtest-cli
-  stow

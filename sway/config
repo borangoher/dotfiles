@@ -1,51 +1,66 @@
-# set key vars
-set $mod Mod4
-set $alt Mod1
-
+# SETTINGS #
 # font
 font pango:IosevkaTerm NFM 12
 
-# start up
-exec --no-startup-id dbus-update-activation-environment --all
-exec --no-startup-id nm-applet
-exec --no-startup-id dunst
-exec --no-startup-id kitty
-exec --no-startup-id firefox
-exec --no-startup-id thunderbird
-exec --no-startup-id 1password
-exec --no-startup-id protonvpn-app
-exec --no-startup-id protonmail-bridge
-exec --no-startup-id solaar
-exec --no-startup-id anki
+# hide borders
+hide_edge_borders both
+default_border none
+default_floating_border none
 
+# focus settings
+focus_follows_mouse no
 
-# wallpaper
-# output * background $HOME/wallpaper.png fill
+# output settings
+output * background $XDG_CONFIG_HOME/theme/wallpaper.png fill
 output DP-3 transform 90
 output DP-3 pos 0 0
 output DP-2 pos 1080 0
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# VARIABLES # 
+# set key vars
+set $mod Mod4
+set $alt Mod1
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# workspace vars
+set $term "1: terminals"
+set $web "2: web"
+set $mail "3: mail client"
+set $pass "4: password manager"
+set $vpn "5: vpn"
+set $utils "6: utilities"
+set $study "7: study"
+set $media "8: media"
+set $ws9 "9"
+set $ws10 "10"
 
-# start a terminal
+# theme
+set $base00 #fbf1f2
+set $base01 #f2f1f4
+set $base02 #d8d5dd
+set $base03 #bfb9c6
+set $base04 #a59daf
+set $base05 #8b8198
+set $base06 #72677E
+set $base07 #585062
+set $base08 #DA627D
+set $base09 #FCA17D
+set $base0A #DCB16C
+set $base0B #A3B367
+set $base0C #06969A
+set $base0D #86BBD8
+set $base0E #9A348E
+set $base0F #BAA58C
+
+# KEYBINDS #
+# various shortcuts
 bindsym $mod+Return exec kitty 
-
-# kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+d exec fuzzel
+bindsym $mod+BackSpace exec wlogout
 
-# start fuzzel 
-bindsym $mod+d exec --no-startup-id fuzzel
-
-# logout bind
-bindsym $mod+BackSpace exec --no-startup-id wlogout
+# reload and restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
 
 # change focus
 bindsym $mod+h focus left
@@ -59,12 +74,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-bindsym $mod+CTRL+h split h
-
-# split in vertical orientation
-bindsym $mod+CTRL+v split v
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -73,32 +82,13 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# move workspaces between gonitors
+# move workspaces between monitors
 bindsym $mod+m move workspace to output right
-bindsym $mod+Shift+m move workspace to output left
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# workspaces
-set $term "1: terminals"
-set $web "2: web"
-set $mail "3: mail client"
-set $pass "4: password manager"
-set $vpn "5: vpn"
-set $utils "6: utilities"
-set $study "7: study"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# switch to workspace
+# workspace navigation
 bindsym $mod+1 workspace number $term 
 bindsym $mod+2 workspace number $web
 bindsym $mod+3 workspace number $mail
@@ -106,11 +96,10 @@ bindsym $mod+4 workspace number $pass
 bindsym $mod+5 workspace number $vpn
 bindsym $mod+6 workspace number $utils
 bindsym $mod+7 workspace number $study
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+8 workspace number $media
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $term
 bindsym $mod+Shift+2 move container to workspace number $web
 bindsym $mod+Shift+3 move container to workspace number $mail
@@ -118,27 +107,13 @@ bindsym $mod+Shift+4 move container to workspace number $pass
 bindsym $mod+Shift+5 move container to workspace number $vpn
 bindsym $mod+Shift+6 move container to workspace number $utils
 bindsym $mod+Shift+7 move container to workspace number $study
-bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+8 move container to workspace number $media
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [app_id="kitty"] $term
-assign [app_id="firefox"] $web
-assign [app_id="thunderbird"] $mail
-assign [class="1Password"] $pass
-assign [app_id="protonvpn-app"] $vpn
-assign [app_id="ch.proton.bridge-gui"] $utils
-assign [app_id="solaar"] $utils
-assign [app_id="anki"] $study
-assign [app_id="org.pwmt.zathura"] $study
+# resize mode
+bindsym $mod+r mode "resize"
 
-workspace_auto_back_and_forth yes
-
-# reload and restart
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-
-# resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
@@ -150,82 +125,82 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Use pactl to adjust volume in PulseAudio.
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# special
-set $foreground #C6C6C6
-set $background #1C1C1C
-set $cursorColor #C6C6C6
+# use playerctl for media control
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
 
-# black
-set $black1 #303030
-set $black2 #444444
-set $trueblack #000000
+# control brightness with brightnessctl
+bindsym --locked XF86MonBrightnessUp exec brightnessctl s +10
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s -10
 
-# red
-set $red1 #d75f5f
-set $red2 #d75f5f
+# take screenshots with grim
+bindsym --locked XF86ScreenSaver exec grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
-# green
-set $green1 #87AF87
-set $green2 #87AF87
+# notification control
+bindsym $mod+x exec dunstctl close-all
+bindsym CTRL+BackSpace exec dunstctl history-pop
 
-# yellow
-set $yellow1 #ffd75f
-set $yellow2 #ffd75f
-
-# blue
-set $blue1 #87afd7
-set $blue2 #87afd7
-
-# magenta
-set $cyan1 #afafd7
-set $cyan2 #afafd7
-
-# cyan
-set $cyan1 #afd7ff
-set $cyan2 #afd7ff
-
-# white
-set $white1 #4E4E4E
-set $white2 #ffffff
-
-# DESIGN #
-# hide borders
-hide_edge_borders both
-
-# class border backgr. text indicator child_border 
-client.focused 		#333333 $black2 $white2 #285577
-client.focused_inactive #333333 $background $foreground #484e50
-client.unfocused 	#333333 #222222 #888888 #292d2e #222222
-client.urgent 		$red1 $red1 $white2 $red1 $red1
-client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
-
-default_border none
-
-focus_follows_mouse no
-
-# i3bar
+# STATUS BAR #
 bar {
 font pango:IosevkaTermNFM, FontAwesome6Free 12
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
-
     tray_output none
-
     colors {
-        background $black2
-        statusline $white2
-        separator $white2
+        background $base00
+        separator  $base01
+        statusline $base04
 
-        focused_workspace 	$background $background $red1
-        active_workspace 	$black2 $black1 $white2
-        inactive_workspace 	$black1 $black2 $foreground
-        urgent_workspace 	$red1 $red1 $white2
-        binding_mode 		$background $red2 $white2
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
     }
 }
+# THEME #
+# mostly inactive since borders are disabled
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
-# dunst
-bindsym $mod+x exec dunstctl close-all
-bindsym CTRL+BackSpace exec dunstctl history-pop
+# APPS #
+# workspace assignments
+assign [app_id="kitty"] $term
+assign [app_id="firefox"] $web
+assign [app_id="thunderbird"] $mail
+assign [class="1Password"] $pass
+assign [app_id="protonvpn-app"] $vpn
+assign [app_id="ch.proton.bridge-gui"] $utils
+assign [app_id="solaar"] $utils
+assign [app_id="anki"] $study
+assign [app_id="org.pwmt.zathura"] $study
+assign [app_id="mpv"] $media
+
+for_window [app_id="mpv"] fullscreen toggle
+
+# start up
+exec udiskie &
+exec dbus-update-activation-environment --all
+exec nm-applet
+exec dunst
+exec kitty
+exec firefox
+exec thunderbird
+exec 1password
+exec protonvpn-app
+exec protonmail-bridge
+exec solaar
+exec anki
 
