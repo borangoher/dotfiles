@@ -111,6 +111,6 @@ format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
-time_format = "%R" 
+time_format = "%R"
 style = "bg:#A3B367"
 format = '[ ♥ $time ]($style)'

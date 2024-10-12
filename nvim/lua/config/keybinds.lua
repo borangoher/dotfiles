@@ -7,6 +7,12 @@ local function CRemap(mode, kbind, cmd, desc)
 	})
 end
 
+-- window nav
+CRemap("n", "<C-h>", "<C-w>h", "Move left")
+CRemap("n", "<C-j>", "<C-w>j", "Move down")
+CRemap("n", "<C-k>", "<C-w>k", "Move up")
+CRemap("n", "<C-l>", "<C-w>l", "Move right")
+
 -- CHADtree
 CRemap("n", "<leader>v", "<cmd>CHADopen<CR>", "Open CHADtree")
 CRemap("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics (Trouble)")
@@ -70,7 +76,7 @@ CRemap("n", "<C-e>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end, "Harpoon quick menu")
 
-CRemap("n", "<C-h>", function()
+CRemap("n", "<C-y>", function()
 	harpoon:list():select(1)
 end, "Harpoon select (1)")
 

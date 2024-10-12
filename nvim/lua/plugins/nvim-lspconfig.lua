@@ -17,6 +17,10 @@ return {
 	init = function()
 		vim.g.coq_settings = {
 			auto_start = true,
+			keymap = {
+				bigger_preview = "<c-i>",
+				jump_to_mark = "<c-u>",
+			},
 		}
 	end,
 	config = function()

@@ -16,7 +16,7 @@ output DP-3 transform 90
 output DP-3 pos 0 0
 output DP-2 pos 1080 0
 
-# VARIABLES # 
+# VARIABLES #
 # set key vars
 set $mod Mod4
 set $alt Mod1
@@ -53,7 +53,7 @@ set $base0F #BAA58C
 
 # KEYBINDS #
 # various shortcuts
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec fuzzel
 bindsym $mod+BackSpace exec wlogout
@@ -89,7 +89,7 @@ bindsym $mod+m move workspace to output right
 bindsym $mod+Shift+space floating toggle
 
 # workspace navigation
-bindsym $mod+1 workspace number $term 
+bindsym $mod+1 workspace number $term
 bindsym $mod+2 workspace number $web
 bindsym $mod+3 workspace number $mail
 bindsym $mod+4 workspace number $pass
