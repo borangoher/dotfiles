@@ -55,4 +55,8 @@ $env.config = {
   }
 }
 
+def sway [] {
+    ^/lib64/ld-linux-x86-64.so.2 --preload /home/boran/repos/accepthack/accepthack.so /usr/bin/sway
+}
+
 use ~/.cache/starship/init.nu

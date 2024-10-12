@@ -1,0 +1,87 @@
+{
+  "system": {
+    "essential": ["man", "man-pages", "fuse2", "dkms"],
+    "network": ["openssh", "networkmanager"],
+    "tools": [
+      "udiskie",
+      "efibootmgr",
+      "zip",
+      "unzip",
+      "pcmanfm",
+      "imagemagick",
+      "grim"
+    ],
+    "bluetooth": ["bluez", "bluez-utils"],
+    "compatibility": [
+      "solaar",
+      "protonmail-bridge",
+      "gnome-keychain",
+      "seahorse"
+    ],
+    "media": ["mpv", "zathura-pdf-mupdf"],
+    "fonts": [
+      "noto-fonts",
+      "noto-fonts-cjk",
+      "noto-fonts-emoji",
+      "noto-fonts-extra",
+      "ttf-font-awesome",
+      "ttf-iosevkaterm-nerd"
+    ],
+    "notifier": ["libnotify", "dunst"],
+    "wayland": ["wl-clipboard", "wlogout", "fuzzel", "keyd"],
+    "wm": ["sway", "swayimg", "swaybg", "i3status-rust"],
+    "sound": [
+      "alsa-utils",
+      "alsa-firmware",
+      "pipewire",
+      "pipewire-alsa",
+      "pipewire-audio",
+      "pipewire-pulse",
+      "wireplumber"
+    ],
+    "other": ["brightnessctl", "playerctl"],
+    "arch": ["yay"]
+  },
+  "apps": [
+    "firefox",
+    "1password",
+    "anki",
+    "thunderbird",
+    "proton-vpn-gtk-app",
+    "hledger-bin"
+  ],
+  "programming": {
+    "term": ["kitty"],
+    "shell": ["nushell", "starship", "fish", "carapace-bin"],
+    "nvim": ["neovim"],
+    "git": ["git", "lazygit"],
+    "yaml": ["yaml-language-server", "yamllint"],
+    "md": ["mdformat", "markdownlint"],
+    "js": ["nodejs", "npm", "nvm", "eslint_d", "prettierd"],
+    "css": ["stylelint"],
+    "html": ["tidy"],
+    "python": [
+      "python",
+      "python-black",
+      "python-pip",
+      "python-pipenv",
+      "python-pylint",
+      "python-pynvim"
+    ],
+    "cpp": ["clang", "cppcheck"],
+    "php": ["php", "composer"],
+    "lua": ["lua", "luarocks", "lua-language-server", "stylua"],
+    "ruby": ["ruby", "ruby-neovim"],
+    "cli": [
+      "fd",
+      "ripgrep",
+      "btop",
+      "rsync",
+      "fzf",
+      "neofetch",
+      "ani-cli",
+      "zoxide",
+      "speedtest-cli"
+    ]
+  }
+}
