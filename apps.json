@@ -56,8 +56,8 @@
     "nvim": ["neovim"],
     "git": ["git", "lazygit"],
     "yaml": ["yaml-language-server", "yamllint"],
-    "md": ["mdformat", "markdownlint"],
-    "js": ["nodejs", "npm", "nvm", "eslint_d", "prettierd"],
+    "md": ["mdformat", "markdownlint", "markdownlint-cli"],
+    "js": ["nodejs", "npm", "nvm", "eslint_d", "prettierd", "deno"],
     "css": ["stylelint"],
     "html": ["tidy"],
     "python": [
