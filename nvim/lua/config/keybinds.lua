@@ -8,10 +8,10 @@ local function CRemap(mode, kbind, cmd, desc)
 end
 
 -- window nav
-CRemap("n", "<C-h>", "<C-w>h", "Move left")
-CRemap("n", "<C-j>", "<C-w>j", "Move down")
-CRemap("n", "<C-k>", "<C-w>k", "Move up")
-CRemap("n", "<C-l>", "<C-w>l", "Move right")
+CRemap("n", "<C-left>", "<C-w>h", "Move left")
+CRemap("n", "<C-down>", "<C-w>j", "Move down")
+CRemap("n", "<C-up>", "<C-w>k", "Move up")
+CRemap("n", "<C-right>", "<C-w>l", "Move right")
 
 -- CHADtree
 CRemap("n", "<leader>v", "<cmd>CHADopen<CR>", "Open CHADtree")
