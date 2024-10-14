@@ -4,7 +4,10 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "black" },
-			javascript = { "prettierd" },
+			javascript = { "prettierd", "rustywind" },
+			typescript = { "prettierd", "rustywind" },
+			javascriptreact = { "prettierd", "rustywind" },
+			typescriptreact = { "prettierd", "rustywind" },
 			html = { "prettierd" },
 			cpp = { "clang-format" },
 			css = { "stylelint" },

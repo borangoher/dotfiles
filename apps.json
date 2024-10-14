@@ -58,7 +58,7 @@
     "yaml": ["yaml-language-server", "yamllint"],
     "md": ["mdformat", "markdownlint", "markdownlint-cli"],
     "js": ["nodejs", "npm", "nvm", "eslint_d", "prettierd", "deno"],
-    "css": ["stylelint"],
+    "css": ["stylelint", "rustywind"],
     "html": ["tidy"],
     "python": [
       "python",
