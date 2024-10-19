@@ -46,8 +46,7 @@ $env.config = {
   edit_mode: vi
   history: {
     max_size: 1000
-  }
-  completions: {
+  } completions: {
       external: {
           enable: true
           completer: $external_completer
@@ -55,8 +54,11 @@ $env.config = {
   }
 }
 
-def sway [] {
-    ^/lib64/ld-linux-x86-64.so.2 --preload /home/boran/repos/accepthack/accepthack.so /usr/bin/sway
+def daycommit [] {
+  let formatted_date = date now | format date "%Y-%m-%d"
+
+  git commit -am $'"($formatted_date)"'
+  git push
 }
 
 use ~/.cache/starship/init.nu

@@ -34,6 +34,7 @@ return {
 		lsp.emmet_language_server.setup({ coq_lsp() })
 		lsp.yamlls.setup({ coq_lsp() })
 		lsp.html.setup({ coq_lsp() })
+		lsp.nushell.setup({ coq_lsp() })
 		lsp.lua_ls.setup({
 			coq_lsp({
 				on_init = function(client)
