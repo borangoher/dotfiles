@@ -12,12 +12,7 @@
       "grim"
     ],
     "bluetooth": ["bluez", "bluez-utils"],
-    "compatibility": [
-      "solaar",
-      "protonmail-bridge",
-      "gnome-keychain",
-      "seahorse"
-    ],
+    "compatibility": ["solaar", "hydroxide", "gnome-keychain", "seahorse"],
     "media": ["mpv", "zathura-pdf-mupdf"],
     "fonts": [
       "noto-fonts",
@@ -81,6 +76,7 @@
       "neofetch",
       "ani-cli",
       "zoxide",
+      "1password-cli",
       "speedtest-cli"
     ]
   }
